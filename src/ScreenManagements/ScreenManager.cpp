@@ -36,8 +36,8 @@ namespace flappybird
 
 		InitWindow(windowW, windowH, "Flappy Virko by Mateo Viko Monastra");
 
+		game::InitGame(); 
 		currentScreen = Screen::Game;
-		game::InitGame();
 		SetRandomSeed(NULL);
 	}
 

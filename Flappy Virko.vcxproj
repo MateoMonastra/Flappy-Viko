@@ -20,11 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Objects\Bird.cpp" />
+    <ClCompile Include="src\Objects\Obstacles.cpp" />
     <ClCompile Include="src\ProgramUtilities\Utilities.cpp" />
     <ClCompile Include="src\ScreenManagements\ScreenManager.cpp" />
     <ClCompile Include="src\Screens\Game.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Objects\Bird.h" />
+    <ClInclude Include="src\Objects\Obstacles.h" />
     <ClInclude Include="src\ProgramUtilities\Utilities.h" />
     <ClInclude Include="src\ScreenManagements\ScreenManager.h" />
     <ClInclude Include="src\ScreenManagements\Screens.h" />
