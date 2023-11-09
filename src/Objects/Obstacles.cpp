@@ -8,17 +8,11 @@ namespace flappybird
 		{
 			obstacle.hitBox.x -= obstacle.speed * GetFrameTime();
 
-			if (obstacle.hitBox.x <= 0)
+			if (obstacle.hitBox.x + obstacle.hitBox.width <= 0)
 			{
-				float randomY = static_cast<float>(GetRandomValue(0, GetScreenHeight()));
 
-				while (randomY < obstacle.hitBox.height)
-				{
-					randomY = static_cast<float>(GetRandomValue(0, GetScreenHeight()));
-				}
-
-				obstacle.hitBox.x = {static_cast<float>(GetScreenWidth()) + 50};
-				obstacle.hitBox.y = randomY;
+				obstacle.hitBox.x = { static_cast<float>(GetScreenWidth()) + 50 };
+				obstacle.hitBox.y = {static_cast<float>(GetRandomValue(0, GetScreenHeight() - static_cast<int>(obstacle.hitBox.height)))};
 			}
 		}
 		void ObstacleDraw(Obstacle obstacle)
@@ -27,7 +21,7 @@ namespace flappybird
 		}
 		void InitObstacle(Obstacle& obstacle)
 		{
-			obstacle.hitBox = { static_cast<float>(GetScreenWidth()) + 50, static_cast<float>(GetRandomValue(0,GetScreenHeight())) , 30, 150 };
+			obstacle.hitBox = { static_cast<float>(GetScreenWidth()) + 50, static_cast<float>(/*GetRandomValue(0,*/GetScreenHeight()) - /*static_cast<int>*/(obstacle.hitBox.height) , 30, 150 };
 		}
 	}
 }
