@@ -25,7 +25,7 @@ namespace flappybird
 		{
 			BirdDraw(player);
 			ObstacleDraw(obstacle);
-			DrawText("0.1", 20, 20, 40, WHITE);
+			DrawText("0.1", GetScreenWidth() - 60, GetScreenHeight() - 60, 40, WHITE);
 		}
 
 		void InitGame()
