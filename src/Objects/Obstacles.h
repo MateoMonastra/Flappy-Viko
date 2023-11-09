@@ -11,6 +11,8 @@ namespace flappybird
 			Rectangle hitBox = {};
 			Color color = { RED };
 
+			float speed = { 160 };
+
 			bool isOnScreen = false;
 		};
 	

@@ -7,27 +7,42 @@
 
 namespace flappybird
 {
-    namespace game
-    {
-        Bird player;
-        Obstacle obstacle;
+	namespace game
+	{
+		Bird player;
+		Obstacle obstacle;
 
-        void GameUpdate()
-        {
-            BirdUpdate(player);
-            ObstacleUpdate(obstacle);
-        }
+		static void GameColitions();
 
-        void DrawGame()
-        {
-            BirdDraw(player);
-            ObstacleDraw(obstacle);
-        }
+		void GameUpdate()
+		{
+			BirdUpdate(player);
+			ObstacleUpdate(obstacle);
+			GameColitions();
+		}
 
-        void InitGame()
-        {
-            InitBird(player);
-            InitObstacle(obstacle);
-        }
-    }
+		void DrawGame()
+		{
+			BirdDraw(player);
+			ObstacleDraw(obstacle);
+			DrawText("0.1", 20, 20, 40, WHITE);
+		}
+
+		void InitGame()
+		{
+			InitBird(player);
+			InitObstacle(obstacle);
+		}
+
+
+		static void GameColitions()
+		{
+
+			if (CheckCollisionRecs(player.hitBox, obstacle.hitBox))
+			{
+				InitGame();
+			}
+
+		}
+	}
 }

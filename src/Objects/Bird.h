@@ -10,6 +10,8 @@ namespace flappybird
 		{
 			Rectangle hitBox = {};
 			Color color = {RED};
+
+			float speed = { 200 };
 		};
 	
 		void BirdUpdate(Bird& player);
