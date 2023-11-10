@@ -9,9 +9,14 @@ namespace flappybird
 		struct Bird
 		{
 			Rectangle hitBox = {};
-			Color color = {RED};
+			Color color = { RED };
 
-			float speed = { 200 };
+			Vector2 velocity = { 0,0 };
+
+			const float TERMINAL_VELOCITY = 400;
+			float gravity = { 300 };
+
+			float aceleration = {-250};
 		};
 	
 		void BirdUpdate(Bird& player);
