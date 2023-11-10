@@ -12,7 +12,16 @@ namespace flappybird
 		Bird player;
 		Obstacle obstacle;
 
+		Sprite BackgroundLayer1;
+		Sprite BackgroundLayer2;
+		Sprite BackgroundLayer3;
+		Sprite BackgroundLayer4;
+		Sprite BackgroundLayer5;
+
+
 		static void GameColitions();
+		static void DrawParallax();
+		/*static void UpdateParallax();*/
 
 		void GameUpdate()
 		{
@@ -23,6 +32,7 @@ namespace flappybird
 
 		void DrawGame()
 		{
+			DrawParallax();
 			BirdDraw(player);
 			ObstacleDraw(obstacle);
 			DrawText("0.1", GetScreenWidth() - 60, GetScreenHeight() - 60, 40, WHITE);
@@ -32,6 +42,8 @@ namespace flappybird
 		{
 			InitBird(player);
 			InitObstacle(obstacle);
+
+			BackgroundLayer1.texture = LoadTexture("res/background/layer_1");
 		}
 
 
@@ -40,9 +52,20 @@ namespace flappybird
 
 			if (CheckCollisionRecs(player.hitBox, obstacle.hitBox))
 			{
-				InitGame();
+				InitBird(player);
+				InitObstacle(obstacle);
 			}
 
 		}
+
+		static void DrawParallax()
+		{
+			DrawSprite(BackgroundLayer1);
+		}
+
+		/*static void UpdateParallax()
+		{
+		
+		}*/
 	}
 }

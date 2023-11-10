@@ -34,7 +34,7 @@ namespace flappybird
 		int windowH = 500;
 		int windowW = 1000;
 
-		InitWindow(windowW, windowH, "Flappy Virko by Mateo Viko Monastra");
+		InitWindow(windowW, windowH, "Flappy Viko by Mateo Viko Monastra");
 
 		game::InitGame(); 
 		currentScreen = Screen::Game;
