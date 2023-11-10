@@ -31,7 +31,7 @@ namespace flappybird
 
 		void InitBird(Bird& player)
 		{
-			player.hitBox = { static_cast<float>(GetScreenWidth()) / 2 - 400, static_cast<float>(GetScreenHeight()) / 2 , 30, 30 };
+			player.hitBox = { static_cast<float>(GetScreenWidth()) / 2 - 100, static_cast<float>(GetScreenHeight()) / 2 , 30, 30 };
 		}
 	}
 }

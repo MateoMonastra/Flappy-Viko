@@ -32,7 +32,7 @@ namespace flappybird
 	static void InitProgram()
 	{
 		int windowH = 500;
-		int windowW = 1000;
+		int windowW = 800;
 
 		InitWindow(windowW, windowH, "Flappy Viko by Mateo Viko Monastra");
 

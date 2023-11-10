@@ -4,6 +4,6 @@ namespace flappybird
 {
 	void DrawSprite(Sprite sprite)
 	{
-		DrawTexture(sprite.texture, sprite.x, sprite.y, sprite.color);
+		DrawTextureEx(sprite.texture, sprite.position, 0, sprite.scale, sprite.color);
 	}
 }
