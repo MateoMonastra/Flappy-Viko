@@ -95,6 +95,11 @@ namespace flappybird
 				InitObstacle(obstacle);
 			}
 
+			if (player.hitBox.y + player.hitBox.height > GetScreenHeight())
+			{
+				InitBird(player);
+				InitObstacle(obstacle);
+			}
 		}
 
 		static void DrawParallax()

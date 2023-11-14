@@ -6,10 +6,21 @@ namespace flappybird
 	{
 		void BirdUpdate(Bird& player)
 		{
-
-			if (IsKeyPressed(KEY_UP))
+			if (player.hitBox.y - player.hitBox.height > 0)
 			{
-				player.velocity.y = (player.aceleration);
+				if (IsKeyPressed(KEY_UP))
+				{
+					player.velocity.y = (player.aceleration);
+				}
+				else
+				{
+					player.velocity.y += player.gravity * GetFrameTime();
+
+					if (player.velocity.y > player.TERMINAL_VELOCITY)
+					{
+						player.velocity.y = player.TERMINAL_VELOCITY;
+					}
+				}
 			}
 			else
 			{
