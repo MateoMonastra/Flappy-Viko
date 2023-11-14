@@ -8,8 +8,15 @@ namespace flappybird
 	{
 		struct Bird
 		{
+			Texture2D texture = {};
+			Rectangle dest = {0,0,70,70};
+			Rectangle source = {};
+			Vector2 origin = {};
+
+			float rotation = {};
+
 			Rectangle hitBox = {};
-			Color color = { RED };
+			Color color = { WHITE };
 
 			Vector2 velocity = { 0,0 };
 
