@@ -1,12 +1,11 @@
 
 
+set PositionDir=%1
+set CopyDir=%2
+set PasteDir=%3
 
-set ProjectDir = %1
-set ProjectTargetDir = %2
+cd %PositionDir%
 
-echo %ProjectDir%
-echo %ProjectTargetDir%
+mkdir res
 
-@xcopy /y /i /s %ProjectDir% %ProjectTargetDir%
-
-pause
+xcopy /s /e /y %CopyDir% %PasteDir%
