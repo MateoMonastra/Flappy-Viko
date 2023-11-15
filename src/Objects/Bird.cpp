@@ -68,7 +68,8 @@ namespace flappybird
 
 		void InitBird(Bird& player)
 		{
-			player.hitBox = { static_cast<float>(GetScreenWidth()) / 2 - 100, static_cast<float>(GetScreenHeight()) / 2 , 30, 30 };
+			player.hitBox = { static_cast<float>(GetScreenWidth()) / 2 - 160, static_cast<float>(GetScreenHeight()) / 2 , 30, 30 };
+			player.velocity = {0,0};
 
 			player.texture = LoadTexture("res/game/bird/BirdMovement.png");
 

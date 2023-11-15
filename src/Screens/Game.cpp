@@ -48,7 +48,8 @@ namespace flappybird
 			DrawParallax();
 			BirdDraw(player);
 			ObstacleDraw(obstacle);
-			DrawText("0.2", GetScreenWidth() - 60, GetScreenHeight() - 60, 40, WHITE);
+			DrawText("0.2", GetScreenWidth() - 60, GetScreenHeight() - 60, 40, BLACK);
+			DrawText("Press Esc to return Menu", GetScreenWidth() - 300, 20, 20, BLACK);
 		}
 
 		void InitGame()
