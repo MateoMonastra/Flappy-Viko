@@ -40,6 +40,7 @@ namespace flappybird
 		menu::InitMenu();
 		currentScreen = Scene::Menu;
 		SetRandomSeed(NULL);
+		SetExitKey(NULL);
 	}
 
 	static void Update()
@@ -51,7 +52,7 @@ namespace flappybird
 			menu::MenuUpdate(currentScreen);
 			break;
 		case Scene::Game:
-			game::GameUpdate();
+			game::GameUpdate(currentScreen);
 			break;
 		case Scene::Credits:
 			/*credits::CreditsUpdate(currentScreen);*/

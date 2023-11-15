@@ -30,12 +30,17 @@ namespace flappybird
 		static void UpdateParallax();
 		static void UpdateLayer(Sprite& layer);
 
-		void GameUpdate()
+		void GameUpdate(Scene& currentScene)
 		{
 			BirdUpdate(player);
 			ObstacleUpdate(obstacle);
 			GameColitions();
 			UpdateParallax();
+			
+			if (IsKeyDown(KEY_ESCAPE))
+			{
+				currentScene = Scene::Menu;
+			}
 		}
 
 		void DrawGame()

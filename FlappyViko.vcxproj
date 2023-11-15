@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Credits.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Objects\Bird.cpp" />
     <ClCompile Include="src\Objects\Obstacles.cpp" />
@@ -28,6 +29,7 @@
     <ClCompile Include="src\Screens\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Credits.h" />
     <ClInclude Include="src\Objects\Bird.h" />
     <ClInclude Include="src\Objects\Obstacles.h" />
     <ClInclude Include="src\ProgramUtilities\Utilities.h" />
