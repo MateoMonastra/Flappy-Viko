@@ -6,7 +6,7 @@ namespace flappybird
 {
 	namespace game
 	{
-		void GameUpdate(Scene& currentScene);
+		void GameUpdate(Screen& currentScene);
 		void DrawGame();
 		void InitGame();
 	}

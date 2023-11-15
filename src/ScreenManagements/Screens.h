@@ -2,7 +2,7 @@
 
 namespace flappybird
 {
-    enum class Scene
+    enum class Screen
     {
         Menu,
         Game,

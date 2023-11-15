@@ -30,7 +30,7 @@ namespace flappybird
 		static void UpdateParallax();
 		static void UpdateLayer(Sprite& layer);
 
-		void GameUpdate(Scene& currentScene)
+		void GameUpdate(Screen& currentScene)
 		{
 			BirdUpdate(player);
 			ObstacleUpdate(obstacle);
@@ -39,7 +39,7 @@ namespace flappybird
 			
 			if (IsKeyDown(KEY_ESCAPE))
 			{
-				currentScene = Scene::Menu;
+				currentScene = Screen::Menu;
 			}
 		}
 

@@ -2,7 +2,8 @@
 
 #include "ProgramUtilities/Utilities.h"
 
-#include "Screens/Game.h"
+#include "Game.h"
+#include "Credits.h"
 
 namespace flappybird
 {
@@ -32,7 +33,7 @@ namespace flappybird
 			credits.texture = LoadTexture("res/menu/CreditsButton.png");
 		}
 
-		void MenuUpdate(Scene& currentScene)
+		void MenuUpdate(Screen& currentScene)
 		{
 			if (MouseColision(play))
 			{
@@ -40,7 +41,7 @@ namespace flappybird
 
 				if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 				{
-					currentScene = Scene::Game;
+					currentScene = Screen::Game;
 					game::InitGame();
 				}
 			}
@@ -55,7 +56,7 @@ namespace flappybird
 
 				if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 				{
-					currentScene = Scene::Exit;
+					currentScene = Screen::Exit;
 				}
 			}
 			else
@@ -69,8 +70,8 @@ namespace flappybird
 
 				if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 				{
-					currentScene = Scene::Credits;
-					/*credits::InitCredits();*/
+					currentScene = Screen::Credits;
+					credits::InitCredits();
 				}
 			}
 			else

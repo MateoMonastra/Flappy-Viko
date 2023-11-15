@@ -6,7 +6,7 @@ namespace flappybird
 	namespace menu
 	{
 		void InitMenu();
-		void MenuUpdate(Scene& currentScene);
+		void MenuUpdate(Screen& currentScene);
 		void MenuDrawing();
 	}
 }
