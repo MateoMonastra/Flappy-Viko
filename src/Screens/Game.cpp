@@ -58,6 +58,7 @@ namespace flappybird
 			InitObstacle(obstacle);
 
 			float scale = 0.7f;
+			int distanceBugFix = 6;
 
 			BackgroundLayer1.texture = LoadTexture("res/game/background/layer_1.png");
 			BackgroundLayer1.scale = scale;
@@ -72,7 +73,7 @@ namespace flappybird
 			BackgroundLayer3_2.texture = LoadTexture("res/game/background/layer_3.png");
 			BackgroundLayer3_2.scale = scale;
 			BackgroundLayer3_2.velocity = 30;
-			BackgroundLayer3_2.position.x += (static_cast<float>(BackgroundLayer3_1.texture.width) * BackgroundLayer3_1.scale) /2 + static_cast<float>(GetScreenWidth());
+			BackgroundLayer3_2.position.x += (static_cast<float>(BackgroundLayer3_1.texture.width) * BackgroundLayer3_1.scale) / distanceBugFix + static_cast<float>(GetScreenWidth());
 
 			BackgroundLayer4_1.texture = LoadTexture("res/game/background/layer_4.png");
 			BackgroundLayer4_1.scale = scale;
@@ -81,7 +82,7 @@ namespace flappybird
 			BackgroundLayer4_2.texture = LoadTexture("res/game/background/layer_4.png");
 			BackgroundLayer4_2.scale = scale;
 			BackgroundLayer4_2.velocity = 60;
-			BackgroundLayer4_2.position.x += (static_cast<float>(BackgroundLayer4_1.texture.width) * BackgroundLayer4_1.scale) / 2 + static_cast<float>(GetScreenWidth());
+			BackgroundLayer4_2.position.x += (static_cast<float>(BackgroundLayer4_1.texture.width) * BackgroundLayer4_1.scale) / distanceBugFix + static_cast<float>(GetScreenWidth());
 
 			BackgroundLayer5_1.texture = LoadTexture("res/game/background/layer_5.png");
 			BackgroundLayer5_1.scale = scale;
@@ -90,7 +91,7 @@ namespace flappybird
 			BackgroundLayer5_2.texture = LoadTexture("res/game/background/layer_5.png");
 			BackgroundLayer5_2.scale = scale;
 			BackgroundLayer5_2.velocity = 100;
-			BackgroundLayer5_2.position.x += (static_cast<float>(BackgroundLayer5_1.texture.width) * BackgroundLayer5_1.scale) / 2 + static_cast<float>(GetScreenWidth());
+			BackgroundLayer5_2.position.x += (static_cast<float>(BackgroundLayer5_1.texture.width) * BackgroundLayer5_1.scale) / distanceBugFix + static_cast<float>(GetScreenWidth());
 		}
 
 
@@ -136,9 +137,9 @@ namespace flappybird
 		{
 			layer.position.x -= layer.velocity * GetFrameTime();
 
-			if (layer.position.x + layer.texture.width < 0)
+			if (layer.position.x + layer.texture.width * layer.scale < 0)
 			{
-				layer.position.x = static_cast<float>(GetScreenWidth()) + (static_cast<float>(layer.texture.width) * layer.scale) / 2;
+				layer.position.x = static_cast<float>(GetScreenWidth());
 			}
 		}
 	}
