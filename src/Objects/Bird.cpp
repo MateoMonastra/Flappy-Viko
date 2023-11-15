@@ -17,7 +17,7 @@ namespace flappybird
 
 			if (player.hitBox.y - player.hitBox.height > 0)
 			{
-				if (IsKeyPressed(KEY_UP))
+				if (IsKeyPressed(KEY_UP) || IsMouseButtonPressed(MOUSE_BUTTON_LEFT) )
 				{
 					player.velocity.y = (player.aceleration);
 
@@ -70,7 +70,7 @@ namespace flappybird
 		{
 			player.hitBox = { static_cast<float>(GetScreenWidth()) / 2 - 100, static_cast<float>(GetScreenHeight()) / 2 , 30, 30 };
 
-			player.texture = LoadTexture("res/Bird/BirdMovement.png");
+			player.texture = LoadTexture("res/game/bird/BirdMovement.png");
 
 			player.dest = { player.hitBox.x, player.hitBox.y, player.SPRITE_SIZE, player.SPRITE_SIZE };
 			player.origin = { player.hitBox.width/2, player.hitBox.height};

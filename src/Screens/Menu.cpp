@@ -17,19 +17,19 @@ namespace flappybird
 		{
 			title.position = { static_cast<float>(GetScreenWidth()) / 2 -240, 60 };
 			title.scale = 0.7f;
-			title.texture = LoadTexture("res/Menu/Title.png");
+			title.texture = LoadTexture("res/menu/Title.png");
 
 			play.position = { static_cast<float>(GetScreenWidth()) / 2 - 80 , 400};
 			play.scale = 0.5f;
-			play.texture = LoadTexture("res/Menu/PlayButton.png");
+			play.texture = LoadTexture("res/menu/PlayButton.png");
 
 			exit.position = { static_cast<float>(GetScreenWidth()) / 2 - 80, 640 };
 			exit.scale = 0.5f;
-			exit.texture = LoadTexture("res/Menu/ExitButton.png");
+			exit.texture = LoadTexture("res/menu/ExitButton.png");
 
 			credits.position = { static_cast<float>(GetScreenWidth()) / 2 - 80, 510};
 			credits.scale = 0.5f;
-			credits.texture = LoadTexture("res/Menu/CreditsButton.png");
+			credits.texture = LoadTexture("res/menu/CreditsButton.png");
 		}
 
 		void MenuUpdate(Scene& currentScene)
