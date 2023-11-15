@@ -25,6 +25,7 @@
     <ClCompile Include="src\ProgramUtilities\Utilities.cpp" />
     <ClCompile Include="src\ScreenManagements\ScreenManager.cpp" />
     <ClCompile Include="src\Screens\Game.cpp" />
+    <ClCompile Include="src\Screens\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Objects\Bird.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="src\ScreenManagements\ScreenManager.h" />
     <ClInclude Include="src\ScreenManagements\Screens.h" />
     <ClInclude Include="src\Screens\Game.h" />
+    <ClInclude Include="src\Screens\Menu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

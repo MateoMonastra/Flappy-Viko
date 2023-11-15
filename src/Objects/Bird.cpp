@@ -57,7 +57,7 @@ namespace flappybird
 			}
 
 			player.hitBox.y += player.velocity.y * GetFrameTime();
-			player.dest = { player.hitBox.x, player.hitBox.y, 70, 70 };
+			player.dest = { player.hitBox.x, player.hitBox.y, player.SPRITE_SIZE, player.SPRITE_SIZE};
 		}
 
 		void BirdDraw(Bird player)
@@ -72,7 +72,7 @@ namespace flappybird
 
 			player.texture = LoadTexture("res/Bird/BirdMovement.png");
 
-			player.dest = { player.hitBox.x, player.hitBox.y};
+			player.dest = { player.hitBox.x, player.hitBox.y, player.SPRITE_SIZE, player.SPRITE_SIZE };
 			player.origin = { player.hitBox.width/2, player.hitBox.height};
 			player.source = { player.texture.width / 4.0f, 0, static_cast<float>(player.texture.width) / 4, static_cast<float>(player.texture.height)};
 		}

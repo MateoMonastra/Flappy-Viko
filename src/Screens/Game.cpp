@@ -51,36 +51,38 @@ namespace flappybird
 			InitBird(player);
 			InitObstacle(obstacle);
 
+			float scale = 0.7f;
+
 			BackgroundLayer1.texture = LoadTexture("res/background/layer_1.png");
-			BackgroundLayer1.scale = 0.5f;
+			BackgroundLayer1.scale = scale;
 
 			BackgroundLayer2.texture = LoadTexture("res/background/layer_2.png");
-			BackgroundLayer2.scale = 0.5f;
+			BackgroundLayer2.scale = scale;
 
 			BackgroundLayer3_1.texture = LoadTexture("res/background/layer_3.png");
-			BackgroundLayer3_1.scale = 0.5f;
+			BackgroundLayer3_1.scale = scale;
 			BackgroundLayer3_1.velocity = 30;
 
 			BackgroundLayer3_2.texture = LoadTexture("res/background/layer_3.png");
-			BackgroundLayer3_2.scale = 0.5f;
+			BackgroundLayer3_2.scale = scale;
 			BackgroundLayer3_2.velocity = 30;
 			BackgroundLayer3_2.position.x += (static_cast<float>(BackgroundLayer3_1.texture.width) * BackgroundLayer3_1.scale) /2 + static_cast<float>(GetScreenWidth());
 
 			BackgroundLayer4_1.texture = LoadTexture("res/background/layer_4.png");
-			BackgroundLayer4_1.scale = 0.5f;
+			BackgroundLayer4_1.scale = scale;
 			BackgroundLayer4_1.velocity = 60;
 
 			BackgroundLayer4_2.texture = LoadTexture("res/background/layer_4.png");
-			BackgroundLayer4_2.scale = 0.5f;
+			BackgroundLayer4_2.scale = scale;
 			BackgroundLayer4_2.velocity = 60;
 			BackgroundLayer4_2.position.x += (static_cast<float>(BackgroundLayer4_1.texture.width) * BackgroundLayer4_1.scale) / 2 + static_cast<float>(GetScreenWidth());
 
 			BackgroundLayer5_1.texture = LoadTexture("res/background/layer_5.png");
-			BackgroundLayer5_1.scale = 0.5f;
+			BackgroundLayer5_1.scale = scale;
 			BackgroundLayer5_1.velocity = 100;
 
 			BackgroundLayer5_2.texture = LoadTexture("res/background/layer_5.png");
-			BackgroundLayer5_2.scale = 0.5f;
+			BackgroundLayer5_2.scale = scale;
 			BackgroundLayer5_2.velocity = 100;
 			BackgroundLayer5_2.position.x += (static_cast<float>(BackgroundLayer5_1.texture.width) * BackgroundLayer5_1.scale) / 2 + static_cast<float>(GetScreenWidth());
 		}
@@ -95,7 +97,7 @@ namespace flappybird
 				InitObstacle(obstacle);
 			}
 
-			if (player.hitBox.y + player.hitBox.height > GetScreenHeight())
+			if (player.hitBox.y + player.hitBox.height > GetScreenHeight() - player.hitBox.height)
 			{
 				InitBird(player);
 				InitObstacle(obstacle);

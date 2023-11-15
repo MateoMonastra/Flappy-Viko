@@ -4,11 +4,12 @@
 
 #include "Screens.h"
 #include "Screens/Game.h"
+#include "Screens/Menu.h"
 
 
 namespace flappybird
 {
-	Screen currentScreen;
+	Scene currentScreen;
 
 	static void InitProgram();
 	static void Update();
@@ -20,7 +21,7 @@ namespace flappybird
 	{
 		InitProgram();
 
-		while (!WindowShouldClose() && currentScreen != Screen::Exit)
+		while (!WindowShouldClose() && currentScreen != Scene::Exit)
 		{
 			Update();
 			Draw();
@@ -31,13 +32,13 @@ namespace flappybird
 
 	static void InitProgram()
 	{
-		int windowH = 500;
-		int windowW = 800;
+		int windowH = 720;
+		int windowW = 1080;
 
 		InitWindow(windowW, windowH, "Flappy Viko by Mateo Viko Monastra");
 
-		game::InitGame(); 
-		currentScreen = Screen::Game;
+		menu::InitMenu();
+		currentScreen = Scene::Menu;
 		SetRandomSeed(NULL);
 	}
 
@@ -46,16 +47,16 @@ namespace flappybird
 
 		switch (currentScreen)
 		{
-		case Screen::Menu:
-			/*menu::MenuUpdate(currentScreen);*/
+		case Scene::Menu:
+			menu::MenuUpdate(currentScreen);
 			break;
-		case Screen::Game:
+		case Scene::Game:
 			game::GameUpdate();
 			break;
-		case Screen::Credits:
+		case Scene::Credits:
 			/*credits::CreditsUpdate(currentScreen);*/
 			break;
-		case Screen::Exit:
+		case Scene::Exit:
 			Close();
 			break;
 		default:
@@ -70,13 +71,13 @@ namespace flappybird
 		ClearBackground(BLACK);
 		switch (currentScreen)
 		{
-		case Screen::Menu:
-			/*menu::MenuDrawing();*/
+		case Scene::Menu:
+			menu::MenuDrawing();
 			break;
-		case Screen::Game:
+		case Scene::Game:
 			game::DrawGame();
 			break;
-		case Screen::Credits:
+		case Scene::Credits:
 			/*credits::CreditsDrawing();*/
 			break;
 		default:

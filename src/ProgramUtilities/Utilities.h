@@ -16,4 +16,5 @@ struct Sprite
 
 void DrawSprite(Sprite sprite);
 
+bool MouseColision(Sprite rec);
 }
