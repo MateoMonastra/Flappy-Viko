@@ -4,6 +4,7 @@ namespace flappybird
 {
 	namespace game
 	{
+
 		float animationTimer = 0;
 
 		void BirdUpdate(Bird& player)
@@ -83,10 +84,12 @@ namespace flappybird
 
 		void InitBird(Bird& player)
 		{
+			Texture2D playerTexture = LoadTexture("res/game/bird/BirdMovement.png");
+
 			player.hitBox = { static_cast<float>(GetScreenWidth()) / 2 - 160, static_cast<float>(GetScreenHeight()) / 2 , 30, 30 };
 			player.velocity = {0,0};
 
-			player.texture = LoadTexture("res/game/bird/BirdMovement.png");
+			player.texture = playerTexture;
 			player.rotation = 0;
 
 			player.dest = { player.hitBox.x, player.hitBox.y, player.SPRITE_SIZE, player.SPRITE_SIZE };
