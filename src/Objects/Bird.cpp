@@ -20,6 +20,7 @@ namespace flappybird
 				if (IsKeyPressed(KEY_UP) || IsMouseButtonPressed(MOUSE_BUTTON_LEFT) )
 				{
 					player.velocity.y = (player.aceleration);
+					player.rotation = player.TOP_ROTATION;
 
 					if (animationTimer >= animationCooldown)
 					{
@@ -34,6 +35,13 @@ namespace flappybird
 				else
 				{
 					player.velocity.y += player.gravity * GetFrameTime();
+
+					player.rotation += player.ROTATION_GRAVITY * GetFrameTime();
+
+					if (player.rotation > player.LOWEST_ROTATION)
+					{
+						player.rotation = player.LOWEST_ROTATION;
+					}
 
 					if (player.velocity.y > player.TERMINAL_VELOCITY)
 					{
@@ -50,6 +58,13 @@ namespace flappybird
 			{
 				player.velocity.y += player.gravity * GetFrameTime();
 
+				player.rotation += player.ROTATION_GRAVITY * GetFrameTime();
+				
+				if (player.rotation > player.LOWEST_ROTATION)
+				{
+					player.rotation = player.LOWEST_ROTATION;
+				}
+
 				if (player.velocity.y > player.TERMINAL_VELOCITY)
 				{
 					player.velocity.y = player.TERMINAL_VELOCITY;
@@ -57,7 +72,7 @@ namespace flappybird
 			}
 
 			player.hitBox.y += player.velocity.y * GetFrameTime();
-			player.dest = { player.hitBox.x, player.hitBox.y, player.SPRITE_SIZE, player.SPRITE_SIZE};
+			player.dest = { player.hitBox.x + 20, player.hitBox.y, player.SPRITE_SIZE, player.SPRITE_SIZE};
 		}
 
 		void BirdDraw(Bird player)
@@ -72,9 +87,10 @@ namespace flappybird
 			player.velocity = {0,0};
 
 			player.texture = LoadTexture("res/game/bird/BirdMovement.png");
+			player.rotation = 0;
 
 			player.dest = { player.hitBox.x, player.hitBox.y, player.SPRITE_SIZE, player.SPRITE_SIZE };
-			player.origin = { player.hitBox.width/2, player.hitBox.height};
+			player.origin = { player.hitBox.width, player.hitBox.height};
 			player.source = { player.texture.width / 4.0f, 0, static_cast<float>(player.texture.width) / 4, static_cast<float>(player.texture.height)};
 		}
 	}

@@ -15,6 +15,11 @@ namespace flappybird
 			Vector2 origin = {};
 
 			float rotation = {};
+			const float ROTATION_GRAVITY = { 50 };
+			const float TOP_ROTATION = { -40 };
+			const float LOWEST_ROTATION = { 50 };
+		
+		
 
 			Rectangle hitBox = {};
 			Color color = { WHITE };
