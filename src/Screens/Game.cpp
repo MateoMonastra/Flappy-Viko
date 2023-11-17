@@ -116,7 +116,7 @@ namespace flappybird
 			{
 				if (obstacle[i].isOnScreen)
 				{
-					if (CheckCollisionRecs(player.hitBox, obstacle[i].hitBox))
+					if (CheckCollisionRecs(player.hitBox, obstacle[i].lowPart) || CheckCollisionRecs(player.hitBox, obstacle[i].topPart))
 					{
 						currentScene = Screen::Menu;
 					}

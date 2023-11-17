@@ -8,5 +8,6 @@ namespace flappybird
 		void InitMenu();
 		void MenuUpdate(Screen& currentScene);
 		void MenuDrawing();
+	
 	}
 }

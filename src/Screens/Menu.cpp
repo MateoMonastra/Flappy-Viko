@@ -31,6 +31,8 @@ namespace flappybird
 			credits.position = { static_cast<float>(GetScreenWidth()) / 2 - 80, 510};
 			credits.scale = 0.5f;
 			credits.texture = LoadTexture("res/menu/CreditsButton.png");
+
+			
 		}
 
 		void MenuUpdate(Screen& currentScene)
@@ -38,7 +40,7 @@ namespace flappybird
 			if (MouseColision(play))
 			{
 				play.color = GRAY;
-
+				
 				if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 				{
 					currentScene = Screen::Game;

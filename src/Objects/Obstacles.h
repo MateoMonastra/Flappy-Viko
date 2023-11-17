@@ -8,7 +8,10 @@ namespace flappybird
 	{
 		struct Obstacle
 		{
-			Rectangle hitBox = {};
+			Rectangle topPart = {};
+			Rectangle middleSpace = {};
+			Rectangle lowPart = {};
+
 			Color color = { RED };
 
 			float velocity = { 160 };
@@ -16,7 +19,7 @@ namespace flappybird
 			bool isOnScreen = false;
 
 			const float MAX_OBSTACLES = 10.0f;
-			const float MAX_PIPES_IN_SCREEN = 4.0f;
+			const float MAX_PIPES_IN_SCREEN = 1.0f;
 		};
 	
 		void ObstacleUpdate(Obstacle obstacle[]);
